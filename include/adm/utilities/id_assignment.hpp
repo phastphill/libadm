@@ -11,7 +11,7 @@ namespace adm {
   /**
    * @brief Reassign ids of an Document
    *
-   * Assigns new ids to all the elements wihtin an Document. Unreferenced
+   * Assigns new ids to all the elements within an Document. Unreferenced
    * audioTrackFormats and audioChannelFormats which are not referenced by an
    * audioStreamFormat get an Id with the value zero and are thereby marked as
    * ADM elements which should be ignored.
