@@ -94,7 +94,9 @@ namespace adm {
       ss << std::setw(2) << std::setfill('0')
          << std::chrono::duration_cast<std::chrono::seconds>(time).count() % 60;
       ss << ".";
-      ss << std::setw(9) << std::setfill('0') << time.count() % 1000000000;
+      // Dolby tools complain about 9-wide fractional time; 5 might be ok
+      ss << std::setw(5) << std::setfill('0') << (time.count() % 1000000000) / 10000;
+      //ss << std::setw(9) << std::setfill('0') << time.count() % 1000000000;
       return ss.str();
     }
 
